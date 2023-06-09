@@ -1,14 +1,13 @@
-body: //div[@class='post-text' or @class='user-action-time' or @class='user-details' or @class='vote'] | //div[@id='answers-header']//h2
+body: //div[@id='content']
 
 replace_string(<div class="user-details"><br></div>): <!-- nothing -->
-replace_string(<div class="vote">): <div class="vote"><h3>Vote count: 
-
+replace_string(<div id="answers">): <div><h3>ANSWERS</h3> 
+replace_string(<div class="answercell post-layout--right">):<h3>-------------------</h3><div class="answercellpost-layout--right">
 strip_id_or_class: vote-up
 strip_id_or_class: vote-down
 strip_id_or_class: star-off
 strip_id_or_class: favoritecount
 strip_id_or_class: -share
 strip_id_or_class: badgecount
-
 
 test_url: http://stackoverflow.com/questions/4484289/id-like-to-understand-the-jquery-plugin-syntax
